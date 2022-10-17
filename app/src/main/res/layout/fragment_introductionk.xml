@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg_color"
+        android:paddingBottom="@dimen/_20sdp"
+        tools:context=".ui.introduction.IntroductionFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_400sdp"
+            android:scaleType="centerCrop"
+            android:alpha="0.8"
+            android:src="@drawable/intro_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/signInText"
+            style="@style/AppTextStyle"
+            android:layout_width="wrap_content"
+            android:text="@string/sign_in"
+            android:textSize="@dimen/_17sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dummy_text"
+            style="@style/AppTextStyle"
+            android:text="@string/_365_"
+            android:textAlignment="textStart"
+            android:paddingStart="@dimen/_100sdp"
+            android:textSize="@dimen/_35sdp"
+            android:layout_width="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dummy_text2"
+            style="@style/AppTextStyle"
+            android:layout_width="match_parent"
+            android:text="@string/watches"
+            android:paddingStart="@dimen/_45sdp"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_35sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dummy_text" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/letsGoTV"
+            style="@style/AppTextStyle"
+            android:layout_width="wrap_content"
+            android:text="@string/lets_go"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:background="@drawable/square_bg"
+            android:textSize="@dimen/_17sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dummy_text2" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dummy_text4"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:textColor="@color/white"
+            android:text="@string/intro_text"
+            android:textAlignment="center"
+            android:textSize="@dimen/_15sdp"
+            android:fontFamily="@font/nunito_sans_regular"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/letsGoTV" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:background="@color/white"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@+id/placeOrderBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/materialCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/nunito_sans_bold"
+                        android:gravity="center"
+                        android:text="@string/shipping_address"
+                        android:textColor="@color/app_bg_color"
+                        android:textSize="@dimen/_18sdp" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/materialCardView">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_sans_bold"
+                        android:text="@string/add_a_new_address"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:background="@color/black" />
+
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="@string/country_region" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/countryRegionEt"
+                        style="@style/AddAddressScreenEditTextStyle"
+                        android:layout_marginTop="5dp"
+                        android:hint="@string/canada"
+                        android:paddingHorizontal="@dimen/_15sdp" />
+
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/full_name" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/fullNameEt"
+                        style="@style/AddAddressScreenEditTextStyle"
+                        android:layout_marginTop="5dp"
+                        android:hint="@string/stephen"
+                        android:paddingHorizontal="@dimen/_15sdp" />
+
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/phone_number" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/phoneNumberEt"
+                        style="@style/AddAddressScreenEditTextStyle"
+                        android:layout_marginTop="5dp"
+                        android:hint="8789898780"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:paddingHorizontal="@dimen/_15sdp" />
+
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/address" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/addressEt"
+                        style="@style/AddAddressScreenEditTextStyle"
+                        android:layout_marginTop="5dp"
+                        android:hint="@string/dummy_add_hint"
+                        android:paddingHorizontal="@dimen/_15sdp" />
+
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/city" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/cityEt"
+                        style="@style/AddAddressScreenEditTextStyle"
+                        android:layout_marginTop="5dp"
+                        android:hint="@string/brampton"
+                        android:paddingHorizontal="@dimen/_15sdp" />
+
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/postal_code" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/postalCodeEt"
+                        style="@style/AddAddressScreenEditTextStyle"
+                        android:layout_marginTop="5dp"
+                        android:hint="@string/postal_cod_hint"
+                        android:paddingHorizontal="@dimen/_15sdp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:paddingBottom="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_sans_bold"
+                        android:text="@string/payment_mode"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:background="@color/black" />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/debitCartBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginHorizontal="@dimen/_30sdp"
+                            android:background="@color/app_bg_color"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:gravity="center"
+                            android:text="@string/debit_card"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditCardBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginHorizontal="@dimen/_30sdp"
+                            android:background="@color/app_bg_color"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:gravity="center"
+                            android:text="@string/credit_card"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/codBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginHorizontal="@dimen/_30sdp"
+                            android:background="@color/app_bg_color"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:gravity="center"
+                            android:text="@string/cash_on_delivery"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <!--<TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="@string/enter_the_name_of_the_cardholder" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/cardHolderNameEt"
+                        style="@style/AddAddressScreenEditTextStyle"
+                        android:layout_marginTop="5dp"
+                        android:hint="@string/stephen"
+                        android:paddingHorizontal="@dimen/_15sdp" />
+
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/enter_the_cardnumber" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/cardNumberEt"
+                        style="@style/AddAddressScreenEditTextStyle"
+                        android:layout_marginTop="5dp"
+                        android:hint="667890989087"
+                        android:maxLength="12"
+                        android:paddingHorizontal="@dimen/_15sdp" />
+
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/enter_the_expiry_date_and_year" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/expiryDateEt"
+                        style="@style/AddAddressScreenEditTextStyle"
+                        android:layout_marginTop="5dp"
+                        android:hint="22/07/2035"
+                        android:focusable="false"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:paddingHorizontal="@dimen/_15sdp" />
+
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/enter_cvv_number" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/cvvEt"
+                        style="@style/AddAddressScreenEditTextStyle"
+                        android:layout_marginTop="5dp"
+                        android:hint="879"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:paddingHorizontal="@dimen/_15sdp" />
+-->
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    <!--    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/placeOrderBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:background="@color/app_bg_color"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:gravity="center"
+            android:text="@string/place_order"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

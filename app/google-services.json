@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "302837873039",
+    "project_id": "watch-kart",
+    "storage_bucket": "watch-kart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302837873039:android:08eb17a47f257785c2b3fa",
+        "android_client_info": {
+          "package_name": "com.smart.watchkart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302837873039-ol322una5a4cbuu822v04jd6ij85bduj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smart.watchkart",
+            "certificate_hash": "a49961d5c2010c151d42aae8073537cd2a95e674"
+          }
+        },
+        {
+          "client_id": "302837873039-r04s0s3ajfblsejh7ntk2vvth6frrtjs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXa-wzaipuGM94HUDDv4aoUmC0rTiWVUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302837873039-r04s0s3ajfblsejh7ntk2vvth6frrtjs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
