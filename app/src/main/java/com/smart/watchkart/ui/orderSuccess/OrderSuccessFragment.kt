@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.View
 import com.smart.watchkart.databinding.FragmentOrderSuccessBinding
 
-class OrderSuccessFragment : BaseFragment<FragmentOrderSuccessBinding?>() {
+class OrderSuccessFragment() : BaseFragment<FragmentOrderSuccessBinding?>() {
     override fun onCreateBinding(
         inflater: LayoutInflater?,
         container: ViewGroup?,

@@ -13,7 +13,7 @@ import com.smart.watchkart.ui.orderSuccess.OrderSuccessFragment
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog
 import java.util.*
 
-class ShippingAddressFragment : BaseFragment<FragmentShippingAddressBinding?>(),
+class ShippingAddressFragment() : BaseFragment<FragmentShippingAddressBinding?>(),
     DatePickerDialog.OnDateSetListener {
     override fun onCreateBinding(
         inflater: LayoutInflater?,
@@ -42,6 +42,10 @@ class ShippingAddressFragment : BaseFragment<FragmentShippingAddressBinding?>(),
             if (isValidData) {
                 changeFragment(true, DebitCardFragment(), R.id.homeContainer)
             }
+        }
+
+        binding?.backButton?.setOnClickListener {
+            baseActivity?.supportFragmentManager?.popBackStack()
         }
     }
 

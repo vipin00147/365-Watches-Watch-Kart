@@ -16,6 +16,7 @@ import com.smart.watchkart.databinding.ActivityHomeBinding
 
 class HomeActivity : BaseActivity<ActivityHomeBinding?>(), View.OnClickListener, TextWatcher {
     var navRoot: SlidingRootNav? = null
+
     override fun createBinding(): ActivityHomeBinding {
         return ActivityHomeBinding.inflate(layoutInflater)
     }
@@ -88,11 +89,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding?>(), View.OnClickListener,
     override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
     override fun afterTextChanged(editable: Editable) {
         searchText = editable.toString()
-        searchCallBack!!.searchProduct(editable.toString())
+        searchCallBack?.searchProduct(editable.toString())
         if (editable.toString().isEmpty()) {
-            binding!!.clearTextv.visibility = View.GONE
+            binding?.clearTextv?.visibility = View.GONE
         } else {
-            binding!!.clearTextv.visibility = View.VISIBLE
+            binding?.clearTextv?.visibility = View.VISIBLE
         }
     }
 }

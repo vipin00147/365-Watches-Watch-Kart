@@ -18,7 +18,7 @@ import java.util.function.Predicate
 import java.util.stream.Collectors
 import java.util.stream.Stream
 
-class CartFragment : BaseFragment<FragmentCartBinding?>() {
+class CartFragment() : BaseFragment<FragmentCartBinding?>() {
     private var adapter: CartAdapter? = null
     var totalSaving = 0
     var discountPercentage = 0.0
@@ -82,6 +82,10 @@ You saved ${"$"}${subTotal * discountPercentage} on your order"""
             discountPercentage = 0.0
             binding!!.couponRemoveLayout.visibility = View.GONE
             updateTotal()
+        }
+
+        binding?.backButton?.setOnClickListener {
+            baseActivity?.supportFragmentManager?.popBackStack()
         }
     }
 

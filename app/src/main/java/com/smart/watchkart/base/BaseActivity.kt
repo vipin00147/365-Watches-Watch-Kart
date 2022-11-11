@@ -45,6 +45,8 @@ abstract class BaseActivity<V : ViewBinding?> : AppCompatActivity() {
     var fragment: Fragment? = null
     var homeActivity: HomeActivity? = null
     var searchText: String? = null
+    var selectedProductPosition: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = createBinding()
         setContentView(binding!!.root)

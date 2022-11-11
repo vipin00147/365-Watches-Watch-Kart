@@ -8,10 +8,11 @@ import android.os.Handler
 import android.view.View
 import com.smart.watchkart.R
 import com.smart.watchkart.databinding.FragmentProductDetailBinding
+import com.smart.watchkart.ui.cart.CartFragment
 import com.smart.watchkart.ui.shippingAddress.ShippingAddressFragment
 
-class ProductDetailFragment(var adapterPosition: Int) :
-    BaseFragment<FragmentProductDetailBinding?>(), View.OnClickListener {
+class ProductDetailFragment() : BaseFragment<FragmentProductDetailBinding?>(), View.OnClickListener {
+
     override fun onCreateBinding(
         inflater: LayoutInflater?,
         container: ViewGroup?,
@@ -24,20 +25,26 @@ class ProductDetailFragment(var adapterPosition: Int) :
         super.onViewCreated(view, savedInstanceState)
         setViewListeners()
         baseActivity!!.setImageWithGlide(
-            binding!!.productImage, baseActivity!!.productList[adapterPosition].product_Image
+            binding!!.productImage, baseActivity!!.productList[baseActivity?.selectedProductPosition!!].product_Image
         )
-        binding!!.productNameTv.text = baseActivity!!.productList[adapterPosition].product_Name
-        binding!!.serialNumberTv.text = baseActivity!!.productList[adapterPosition].serial_Number
+        binding!!.productNameTv.text = baseActivity!!.productList[baseActivity?.selectedProductPosition!!].product_Name
+        binding!!.serialNumberTv.text = baseActivity!!.productList[baseActivity?.selectedProductPosition!!].serial_Number
         binding!!.productPriceTv.text = "$ " + intSeparatorBy3(
-            "" + baseActivity!!.productList[adapterPosition].get_price()
+            "" + baseActivity!!.productList[baseActivity?.selectedProductPosition!!].get_price()
         )
-        binding!!.productDetail.text = baseActivity!!.productList[adapterPosition].get_detail()
+        binding!!.productDetail.text = baseActivity!!.productList[baseActivity?.selectedProductPosition!!].get_detail()
+        binding?.backButton?.setOnClickListener {
+            baseActivity?.supportFragmentManager?.popBackStack()
+        }
+        binding?.cartIcon?.setOnClickListener {
+            changeFragment(true, CartFragment(), R.id.homeContainer)
+        }
     }
 
     private fun setViewListeners() {
         binding!!.addToCartBtn.setOnClickListener(this)
         binding!!.buyNowBtn.setOnClickListener(this)
-        if (baseActivity!!.productList[adapterPosition].get_is_AddedTo_Cart()) {
+        if (baseActivity!!.productList[baseActivity?.selectedProductPosition!!].get_is_AddedTo_Cart()) {
             binding!!.addToCartBtn.setText(R.string.remove_from_cart)
         } else {
             binding!!.addToCartBtn.setText(R.string.add_to_cart)
@@ -47,14 +54,14 @@ class ProductDetailFragment(var adapterPosition: Int) :
     override fun onClick(view: View) {
         if (view.id == binding!!.addToCartBtn.id) {
             baseActivity!!.showLoader()
-            if (!baseActivity!!.productList[adapterPosition].get_is_AddedTo_Cart()) {
-                baseActivity!!.productList[adapterPosition].set_is_AddedTo_Cart(true)
+            if (!baseActivity!!.productList[baseActivity?.selectedProductPosition!!].get_is_AddedTo_Cart()) {
+                baseActivity!!.productList[baseActivity?.selectedProductPosition!!].set_is_AddedTo_Cart(true)
             } else {
-                baseActivity!!.productList[adapterPosition].set_is_AddedTo_Cart(false)
+                baseActivity!!.productList[baseActivity?.selectedProductPosition!!].set_is_AddedTo_Cart(false)
             }
             Handler().postDelayed({
                 baseActivity!!.hideLoader()
-                if (baseActivity!!.productList[adapterPosition].get_is_AddedTo_Cart()) {
+                if (baseActivity!!.productList[baseActivity?.selectedProductPosition!!].get_is_AddedTo_Cart()) {
                     binding!!.addToCartBtn.setText(R.string.remove_from_cart)
                     showSuccessDialog(getString(R.string.item_added_to_cart))
                 } else {

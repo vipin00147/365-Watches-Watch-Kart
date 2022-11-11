@@ -19,7 +19,7 @@ import com.smart.watchkart.model.ProductModel
 import java.lang.Exception
 import java.util.*
 
-class ProductsFragment : BaseFragment<FragmentProductsBinding?>(), OrderPlacedCallBack,
+class ProductsFragment() : BaseFragment<FragmentProductsBinding?>(), OrderPlacedCallBack,
     SearchCallBack {
     private var adapter: ProductAdapter? = null
     private var currentPosition = 0
@@ -60,11 +60,8 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding?>(), OrderPlacedCa
             checkUser.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
-                        val nameFromDb =
-                            snapshot.child(pref.getUserName(context!!)!!).child("name").getValue(
-                                String::class.java
-                            )
-                        binding!!.userNameEt.text = "Welcome\n($nameFromDb)"
+                        val nameFromDb = snapshot.child(pref.getUserName(baseActivity!!).toString()).child("name").getValue(String::class.java)
+                        binding?.userNameEt?.text = "Welcome\n($nameFromDb)"
                     }
                 }
 
@@ -75,7 +72,8 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding?>(), OrderPlacedCa
     fun viewProduct(id: Int) {
         for (i in baseActivity!!.productList.indices) {
             if (id == baseActivity!!.productList[i].id) {
-                changeFragment(true, ProductDetailFragment(i), R.id.homeContainer)
+                baseActivity?.selectedProductPosition = i
+                changeFragment(true, ProductDetailFragment(), R.id.homeContainer)
             }
         }
     }

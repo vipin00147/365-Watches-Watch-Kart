@@ -15,7 +15,7 @@ import com.smart.watchkart.ui.orderSuccess.OrderSuccessFragment
 import com.braintreepayments.cardform.utils.CardType
 import com.smart.watchkart.databinding.FragmentDebitCardBinding
 
-class DebitCardFragment : BaseFragment<FragmentDebitCardBinding?>(), OnCardTypeChangedListener {
+class DebitCardFragment() : BaseFragment<FragmentDebitCardBinding?>(), OnCardTypeChangedListener {
     override fun onCreateBinding(
         inflater: LayoutInflater?,
         container: ViewGroup?,
@@ -52,6 +52,11 @@ class DebitCardFragment : BaseFragment<FragmentDebitCardBinding?>(), OnCardTypeC
                     changeFragment(true, OrderSuccessFragment(), R.id.homeContainer)
                 }, 1500)
             }
+        }
+
+
+        binding?.backButton?.setOnClickListener {
+            baseActivity?.supportFragmentManager?.popBackStack()
         }
     }
 

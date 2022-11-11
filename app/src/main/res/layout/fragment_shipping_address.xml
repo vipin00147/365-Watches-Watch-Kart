@@ -10,16 +10,51 @@
         android:layout_height="match_parent"
         android:background="@color/white">
 
-        <ScrollView
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:fillViewport="true"
-            android:background="@color/white"
-            android:layout_marginBottom="@dimen/_10sdp"
-            app:layout_constraintBottom_toTopOf="@+id/placeOrderBtn"
+            android:layout_height="@dimen/_40sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:text="Shipping Detail"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                app:fontFamily="@font/nunito_sans_regular"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -156,10 +191,10 @@
                     android:id="@+id/linearLayout2"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:paddingBottom="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_30sdp"
                     android:orientation="vertical"
                     android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_20sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout">
@@ -178,22 +213,23 @@
                         android:layout_height="@dimen/_2sdp"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:background="@color/black" />
+
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="@dimen/_10sdp">
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical">
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/debitCartBtn"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_35sdp"
                             android:layout_marginHorizontal="@dimen/_30sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
                             android:background="@color/app_bg_color"
                             android:fontFamily="@font/nunito_sans_bold"
                             android:gravity="center"
                             android:text="@string/debit_card"
-                            android:layout_marginBottom="@dimen/_10sdp"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_14sdp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -205,11 +241,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_35sdp"
                             android:layout_marginHorizontal="@dimen/_30sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
                             android:background="@color/app_bg_color"
                             android:fontFamily="@font/nunito_sans_bold"
                             android:gravity="center"
                             android:text="@string/credit_card"
-                            android:layout_marginBottom="@dimen/_10sdp"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_14sdp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -222,11 +258,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_35sdp"
                             android:layout_marginHorizontal="@dimen/_30sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
                             android:background="@color/app_bg_color"
                             android:fontFamily="@font/nunito_sans_bold"
                             android:gravity="center"
                             android:text="@string/cash_on_delivery"
-                            android:layout_marginBottom="@dimen/_10sdp"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_14sdp"
                             app:layout_constraintBottom_toBottomOf="parent"

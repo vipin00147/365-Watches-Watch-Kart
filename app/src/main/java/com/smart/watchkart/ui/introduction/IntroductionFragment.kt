@@ -9,7 +9,7 @@ import com.smart.watchkart.ui.signin.SignInFragment
 import com.smart.watchkart.R
 import com.smart.watchkart.databinding.FragmentIntroductionkBinding
 
-class IntroductionFragment : BaseFragment<FragmentIntroductionkBinding?>(), View.OnClickListener {
+class IntroductionFragment() : BaseFragment<FragmentIntroductionkBinding?>(), View.OnClickListener {
     override fun onCreateBinding(
         inflater: LayoutInflater?,
         container: ViewGroup?,
