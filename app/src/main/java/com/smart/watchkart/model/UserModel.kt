@@ -2,7 +2,7 @@ package com.smart.watchkart.model
 
 class UserModel(
     var name: String,
-    var user_name: String,
+    var userName: String,
     var password: String,
-    var is_admin: Boolean
+    var isAdmin: Boolean
 )

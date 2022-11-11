@@ -56,16 +56,14 @@ class SignInFragment : BaseFragment<FragmentSignInBinding?>(), View.OnClickListe
             val password = binding!!.passwordEt.text.toString().trim { it <= ' ' }
             rootNode = FirebaseDatabase.getInstance()
             reference = rootNode!!.getReference(getString(R.string.root_name))
-            val checkUser = reference!!.orderByChild("user_name").equalTo(userName)
+            val checkUser = reference!!.orderByChild("userName").equalTo(userName)
             checkUser.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
                         val db_password = snapshot.child(userName).child("password").getValue(
                             String::class.java
                         )
-                        val isAdmin = snapshot.child(userName).child("is_admin").getValue(
-                            Boolean::class.java
-                        )
+                        val isAdmin = snapshot.child(userName).child("admin").getValue(Boolean::class.java)
                         if (db_password == password) {
                             baseActivity!!.hideLoader()
                             pref.setLoginStatus(context!!, true)

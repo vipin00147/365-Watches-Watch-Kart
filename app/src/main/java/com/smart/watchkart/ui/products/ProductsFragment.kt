@@ -52,7 +52,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding?>(), OrderPlacedCa
         private get() {
             val rootNode = FirebaseDatabase.getInstance()
             val reference = rootNode.getReference(getString(R.string.root_name))
-            val checkUser = reference.orderByChild("user_name").equalTo(
+            val checkUser = reference.orderByChild("userName").equalTo(
                 pref.getUserName(
                     baseActivity!!
                 )

@@ -58,7 +58,7 @@ class SignUpFragment() : BaseFragment<FragmentSignUpBinding?>(), View.OnClickLis
             val password = binding!!.passwordEt.text.toString().trim { it <= ' ' }
             rootNode = FirebaseDatabase.getInstance()
             reference = rootNode!!.getReference(getString(R.string.root_name))
-            val checkUser = reference!!.orderByChild("user_name").equalTo(userName)
+            val checkUser = reference!!.orderByChild("userName").equalTo(userName)
             checkUser.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {

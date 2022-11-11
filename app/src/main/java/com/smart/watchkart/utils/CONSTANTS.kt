@@ -5,9 +5,9 @@ object CONSTANTS {
     @JvmField
     var IS_USER_LOGGED = "user_login_status"
     @JvmField
-    var USERNAME = "user_name"
+    var USERNAME = "userName"
     @JvmField
-    var IS_ADMIN = "is_admin"
+    var IS_ADMIN = "admin"
     @JvmField
     var COUPON_10_OFF = "FLAT10OFF"
     @JvmField
