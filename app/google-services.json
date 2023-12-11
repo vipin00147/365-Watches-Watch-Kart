@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "302837873039",
+    "firebase_url": "https://watch-kart-default-rtdb.firebaseio.com",
     "project_id": "watch-kart",
     "storage_bucket": "watch-kart.appspot.com"
   },

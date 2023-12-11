@@ -19,7 +19,7 @@ class OrderSuccessFragment() : BaseFragment<FragmentOrderSuccessBinding?>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fragment = this
-        binding!!.orderId.text = (Math.random() * (99999 - 10000 + 1) + 10000).toInt().toString()
+        //binding!!.orderId.text = (Math.random() * (99999 - 10000 + 1) + 10000).toInt().toString()
         binding!!.estimateDeliveryTv.text =
             "Your estimate delivery will be in " + (Math.random() * (2 - 7 + 1) + 7).toInt() + " working days."
         binding!!.continueShoppingBtn.setOnClickListener { baseActivity!!.clearBackStack() }

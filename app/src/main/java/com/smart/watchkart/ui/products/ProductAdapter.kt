@@ -33,7 +33,7 @@ class ProductAdapter(
             holder.productImage,
             dataModelList[holder.adapterPosition].product_Image
         )
-        holder.brandName.text = dataModelList[holder.adapterPosition].brand_Name
+        //holder.brandName.text = dataModelList[holder.adapterPosition].brand_Name
         holder.productName.text = dataModelList[holder.adapterPosition].product_Name
         holder.serialNumber.text = dataModelList[holder.adapterPosition].serial_Number
         holder.productPrice.text =
@@ -48,7 +48,7 @@ class ProductAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var productImage: ShapeableImageView
         var productName: AppCompatTextView
-        var brandName: AppCompatTextView
+        //var brandName: AppCompatTextView
         var productPrice: AppCompatTextView
         var serialNumber: AppCompatTextView
         var productConstraint: ConstraintLayout
@@ -56,7 +56,7 @@ class ProductAdapter(
         init {
             productImage = itemView.findViewById(R.id.productImage)
             productName = itemView.findViewById(R.id.productNameTv)
-            brandName = itemView.findViewById(R.id.brandNameTv)
+            //brandName = itemView.findViewById(R.id.brandNameTv)
             productPrice = itemView.findViewById(R.id.productPriceTv)
             serialNumber = itemView.findViewById(R.id.serialNumberTv)
             productConstraint = itemView.findViewById(R.id.productConstraint)

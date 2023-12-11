@@ -7,22 +7,16 @@
 
     </data>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/app_bg_color"
-        android:paddingBottom="@dimen/_20sdp"
         tools:context=".ui.introduction.IntroductionFragment">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/appCompatImageView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_400sdp"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:alpha="0.8"
             android:src="@drawable/intro_background"
@@ -44,62 +38,62 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/dummy_text"
             style="@style/AppTextStyle"
-            android:text="@string/_365_"
-            android:textAlignment="textStart"
-            android:paddingStart="@dimen/_100sdp"
-            android:textSize="@dimen/_35sdp"
             android:layout_width="match_parent"
+            android:text="@string/_365_"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/_35sdp"
+            app:layout_constraintBottom_toTopOf="@+id/dummy_text2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/dummy_text2"
             style="@style/AppTextStyle"
             android:layout_width="match_parent"
+            android:gravity="center_horizontal"
             android:text="@string/watches"
-            android:paddingStart="@dimen/_45sdp"
-            android:textAlignment="textStart"
             android:textSize="@dimen/_35sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
+            app:layout_constraintBottom_toTopOf="@+id/letsGoTV"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dummy_text" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/letsGoTV"
             style="@style/AppTextStyle"
             android:layout_width="wrap_content"
-            android:text="@string/lets_go"
-            android:gravity="center"
-            android:layout_marginTop="@dimen/_40sdp"
-            android:paddingHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/square_bg"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:text="@string/lets_go"
             android:textSize="@dimen/_17sdp"
+            app:layout_constraintBottom_toTopOf="@+id/dummy_text4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dummy_text2" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/dummy_text4"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_20sdp"
-            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/nunito_sans_regular"
             android:text="@string/intro_text"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="@dimen/_15sdp"
-            android:fontFamily="@font/nunito_sans_regular"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/letsGoTV" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </ScrollView>
+
 
 </layout>

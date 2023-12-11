@@ -1,93 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/productConstraint"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:background="@color/white"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_15sdp"
-        android:padding="@dimen/_10sdp">
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="14dp">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/productImage"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/productConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_15sdp"
             android:background="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:padding="@dimen/_10sdp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/brandNameTv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:textSize="@dimen/_9sdp"
-            android:textColor="@color/black"
-            android:layout_marginStart="@dimen/_10sdp"
-            app:fontFamily="@font/nunito_sans_regular"
-            app:layout_constraintStart_toEndOf="@+id/productImage"
-            app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/productImage"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/productNameTv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            app:fontFamily="@font/nunito_sans_bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/productImage"
-            app:layout_constraintTop_toBottomOf="@+id/brandNameTv" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                app:fontFamily="@font/nunito_sans_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/productImage"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/serialNumberTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_9sdp"
-            app:fontFamily="@font/nunito_sans_regular"
-            app:layout_constraintStart_toEndOf="@+id/productImage"
-            app:layout_constraintTop_toBottomOf="@+id/productNameTv" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/serialNumberTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9sdp"
+                app:fontFamily="@font/nunito_sans_regular"
+                app:layout_constraintStart_toEndOf="@+id/productImage"
+                app:layout_constraintTop_toBottomOf="@+id/productNameTv" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/productPriceTv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textAlignment="textEnd"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_17sdp"
-            android:textStyle="bold"
-            app:fontFamily="@font/nunito_sans_regular"
-            app:layout_constraintEnd_toEndOf="@+id/productNameTv"
-            app:layout_constraintHorizontal_bias="0.698"
-            app:layout_constraintStart_toEndOf="@+id/serialNumberTv"
-            app:layout_constraintTop_toBottomOf="@+id/productNameTv" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productPriceTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17sdp"
+                android:textStyle="bold"
+                app:fontFamily="@font/nunito_sans_regular"
+                app:layout_constraintEnd_toEndOf="@+id/productNameTv"
+                app:layout_constraintHorizontal_bias="0.698"
+                app:layout_constraintStart_toEndOf="@+id/serialNumberTv"
+                app:layout_constraintTop_toBottomOf="@+id/productNameTv" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/taxTv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="+ TAX"
-            android:textSize="@dimen/_9sdp"
-            android:textAlignment="textEnd"
-            android:textColor="@color/black"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:paddingEnd="@dimen/_20sdp"
-            app:fontFamily="@font/nunito_sans_regular"
-            app:layout_constraintEnd_toEndOf="@+id/productPriceTv"
-            app:layout_constraintStart_toStartOf="@+id/productPriceTv"
-            app:layout_constraintTop_toBottomOf="@+id/productPriceTv" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/taxTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="+ TAX"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9sdp"
+                app:fontFamily="@font/nunito_sans_regular"
+                app:layout_constraintEnd_toEndOf="@+id/productPriceTv"
+                app:layout_constraintStart_toStartOf="@+id/productPriceTv"
+                app:layout_constraintTop_toBottomOf="@+id/productPriceTv" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
 </layout>
